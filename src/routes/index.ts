@@ -14,16 +14,16 @@ const routes = [
     {
         path: '/',
         // element: HomePage,
-        element: Settings,
+        element: ShortcodeBuilder,
     },
-    {
-        path: '/settings',
-        element: Settings,
-    },
-    {
-        path: '/repeater-templates',
-        element: RepeaterTemplates,
-    },
+    // {
+    //     path: '/settings',
+    //     element: Settings,
+    // },
+    // {
+    //     path: '/repeater-templates',
+    //     element: RepeaterTemplates,
+    // },
     {
         path: '/shortcode-builder',
         element: ShortcodeBuilder,

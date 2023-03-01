@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+@layer components {
+}
+
+#wpcontent {
+	@apply pl-0 mt-1;
+}
+
+.react-select {
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="color"]:focus,
+	input[type="date"]:focus,
+	input[type="datetime"]:focus,
+	input[type="datetime-local"]:focus,
+	input[type="email"]:focus,
+	input[type="month"]:focus,
+	input[type="number"]:focus,
+	input[type="search"]:focus,
+	input[type="tel"]:focus,
+	input[type="time"]:focus,
+	input[type="url"]:focus,
+	input[type="week"]:focus,
+	input[type="checkbox"]:focus,
+	input[type="radio"]:focus,
+	select:focus,
+	textarea:focus {
+		box-shadow: unset;
+	}
+}

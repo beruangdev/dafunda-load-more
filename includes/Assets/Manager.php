@@ -113,9 +113,9 @@ class Manager
     public function enqueue_admin_assets()
     {
         // Check if we are on the admin page and page=jobplace.
-        // if ( ! is_admin() || ! isset( $_GET['page'] ) || sanitize_text_field( wp_unslash( $_GET['page'] ) ) !== DLM_SLUG ) {
-        //     return;
-        // }
+        if ( ! is_admin() || ! isset( $_GET['page'] ) || sanitize_text_field( wp_unslash( $_GET['page'] ) ) !== DLM_SLUG ) {
+            return;
+        }
 
         wp_enqueue_style('DLM-css');
         wp_enqueue_script('DLM-app');

@@ -1,13 +1,16 @@
 import { useState } from "react"
+import DisplaySettings from "./contents/DisplaySettings"
+import QueryParameters from "./contents/QueryParameters"
 
-export default function index() {
+export default function index(props: any) {
+    const { attributes, setAttributes } = props
     const menus = [
         {
-            label: "Display Settings",
+            label: "Query Parameters",
             icon: "dashicons-admin-generic"
         },
         {
-            label: "Query Parameters",
+            label: "Display Settings",
             icon: "dashicons-admin-generic"
         },
     ]
@@ -20,11 +23,11 @@ export default function index() {
     }
 
     return (
-        <div className="col-span-9 border border-black">
+        <div className="col-span-9">
             <div className="grid grid-cols-12">
                 <aside id="default-sidebar" className="col-span-2" aria-label="Sidebar">
-                    <div className="h-full overflow-y-auto dark:bg-gray-800">
-                        <ul className="space-y-2">
+                    <div className="h-full overflow-y-auto dark:bg-gray-800 relative contents">
+                        <ul className="space-y-2 sticky top-12">
                             {menus.map((menu, index) => {
                                 return (
                                     <li key={index}>
@@ -41,9 +44,9 @@ export default function index() {
                     </div>
                 </aside>
                 <div className="col-span-10 min-h-[1500px] bg-gray-50">
-                    <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-                       
-                    </div>
+                    {menuActive == 0 && <QueryParameters attributes={attributes} setAttributes={setAttributes} />}
+                    {menuActive == 1 && <DisplaySettings attributes={attributes} setAttributes={setAttributes} />}
+                    {/* {menuActive == 1 && <DisplaySettings attributes={attributes} setAttributes={setAttributes} />} */}
                 </div>
             </div>
         </div>

@@ -1,7 +1,10 @@
 import { __ } from '@wordpress/i18n';
-import Icon from '../../../../components/Icon';
+import { useState } from 'react';
 
-export default function ShortcodeBuilderSidebar() {
+export default function ShortcodeBuilderSidebar(props: any) {
+    const { attributes, setAttributes, shortcode } = props
+
+    const [copyCode, setCopyCode] = useState("Copy Shortcode")
     return (
         <div className="col-span-3 h-full relative">
             <div className="flex flex-col bg-white rounded-md sticky top-12 shadow-xl">
@@ -11,11 +14,20 @@ export default function ShortcodeBuilderSidebar() {
                     <hr />
                     <p className="py-2">Place the following shortcode into the content editor or widget area of your theme.</p>
                     <div className="bg-red-500 w-full min-h-[100px] rounded-md">
-                        <p className='text-white p-2 text-xs'>[ajax_load_more post_type="post" posts_per_page="10"]</p>
+                        <p className='text-white p-2 text-xs'>{shortcode}</p>
                     </div>
                 </div>
                 <div className="bg-gray-100 p-3 flex justify-between">
-                    <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-sm text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Copy Shortcode</button>
+                    <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-sm text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={() => {
+                        navigator.clipboard.writeText(shortcode)
+                        setCopyCode("Copied!!!")
+                        setTimeout(() => {
+                            // if (copyCode == "Copied!!!") {
+                            // }
+                            // setCopyCode("Copied!!!")
+                            setCopyCode("Copy Shortcode")
+                        }, 1000);
+                    }}>{copyCode}</button>
 
 
                     <button type="button" className="text-blue-600 rounded-sm text-xs px-3 py-1.5 text-center inline-flex items-center">

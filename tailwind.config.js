@@ -5,7 +5,7 @@ module.exports = {
         './includes/Shortcode/template/**/*.view.php',
     ],
     darkMode: 'class',
-    important: true,
+    // important: true,
     // media: false,
     theme: {
         extend: {},
@@ -58,6 +58,6 @@ module.exports = {
         // },
     },
     plugins: [
-        require('flowbite/plugin')
+        require('flowbite/plugin'),
     ],
 };

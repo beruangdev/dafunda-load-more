@@ -43,8 +43,8 @@ class Menu
         if (current_user_can($capability)) {
             // $submenu[ $slug ][] = [ esc_attr__( 'Home', 'jobplace' ), $capability, 'admin.php?page=' . $slug . '#/' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
             // $submenu[ $slug ][] = [ esc_attr__( 'Jobs', 'jobplace' ), $capability, 'admin.php?page=' . $slug . '#/jobs' ]; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-            $submenu[$slug][] = [esc_attr__('Settings', 'jobplace'), $capability, 'admin.php?page=' . $slug . '#/settings']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-            $submenu[$slug][] = [esc_attr__('Repeater Templates', 'jobplace'), $capability, 'admin.php?page=' . $slug . '#/repeater-templates']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+            // $submenu[$slug][] = [esc_attr__('Settings', 'jobplace'), $capability, 'admin.php?page=' . $slug . '#/settings']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+            // $submenu[$slug][] = [esc_attr__('Repeater Templates', 'jobplace'), $capability, 'admin.php?page=' . $slug . '#/repeater-templates']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
             $submenu[$slug][] = [esc_attr__('Shortcode Builder', 'jobplace'), $capability, 'admin.php?page=' . $slug . '#/shortcode-builder']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
         }
     }
