@@ -1,4 +1,4 @@
-<a href="#" class="flex flex-wrap flex-col md:flex-row items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+<a href="#" class="flex flex-wrap flex-row md:flex-row items-center bg-white border border-gray-200 rounded-lg shadow  md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
     <div class="self-stretch max-w-[25%]">
         <?= the_post_thumbnail("thumbnail", ["class" => "self-stretch object-cover w-full rounded-t-lg h-full md:w-48 md:rounded-none md:rounded-l-lg", "style" => ""]) ?>
     </div>
